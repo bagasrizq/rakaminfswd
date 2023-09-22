@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+        <h1>Hello World!</h1>
+        <p>List Anime The Best</p>
+            <ul>
+                <li>Naruto</li>
+                <li>One Piece</li>
+                <li>Tsubatsa</li>
+                <li>Dragon Ball</li>
+            </ul>
+        <p>List Anime The Best</p>
+            <ul>
+                <li>Seru Naruto</li> 
+                <li>Seru One Piece</li>
+                <li>Seru Tsubatsa</li>
+                <li>Seru Dragon Ball</li>
+            </ul>
+
+        Nama : <input type ="text" id="nama">
+        <button onclick="getDataInput()">submit</button>
+        <br>
+            <ul id="nama_kelas"></ul>
+        <br>
+
+        <button onclick="getNamaKelas()">SHOW</button>
+        <ul id="show_nama_kelas"></ul>
+
+        <button onclick="testFunction()">klik disini</button>
+        <p id = "nostalgia_kecil"></p>    
+        <p class = "bocil"></p>    
+        <p class = "bocil"></p>    
+
+    <script>
+        let data = []
+    function getDataInput() {
+        const nama_input = document.getElementById("nama")
+        console.log(nama_input.value)
+        data.push(nama_input.value);
+        console.log(data)
+
+        const node  = document.createElement("li")
+        const value_li = document.createTextNode(nama_input.value)
+        node.appendChild(value_li)
+        document.getElementById("nama_kelas").appendChild(node)
+    }
+     
+        document.getElementById("show_nama_kelas").onclick = function getNamaKelas() {
+        const node  = document.createElement("li")
+        const value_li = document.createTextNode(nama_input.value)
+        node.appendChild(value_li)
+        document.getElementById("nama_kelas").appendChild(node)
+
+       
+    }
+
+    function testFunction() {
+        const list_anime = document.getElementsByTagName("li")
+        document.getElementById("nostalgia_kecil").innerHTML = list_anime [5].innerHTML
+        list_anime[6].innerHTML = "Ultamen ajadeng"
+        for (let index = 0; index < list_anime.length; index++) {
+            console.log(list_anime[index])
+        }
+        console.log(list_anime)
+        const bocil_kematian = document.getElementsByClassName("bocil")
+        bocil_kematian[0].innerHTML = "Bocil Naruto"
+        bocil_kematian[1].innerHTML = "Bocil One Piece"
+
+
+        console.log("function Jalan")
+    }
+     
+        
+    </script>
+</body>
+</html>
+
+<!-- SELECTOR ADA 3 :
+
+id => getElementById (id)
+tag => getElementsByTagName (name)
+class => getElementsByClassName (name) 
+-->
