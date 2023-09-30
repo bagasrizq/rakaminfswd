@@ -21,3 +21,6 @@ console.log(arr_genap)
 console.log('array ganjil')
 console.log(arr_ganjil)
        
+// min max array genap & ganjil
+
+// 
